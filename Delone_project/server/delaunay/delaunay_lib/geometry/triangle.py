@@ -3,6 +3,7 @@ from .base import left_turn
 
 from .point import Point
 from .segment import Segment
+from .circle import Circle
 
 
 class Triangle(object):
@@ -296,5 +297,8 @@ class Triangle(object):
         nears.append(']')
         nears = "".join(nears)
 
+        circle = Circle(point_a=self.point_a, point_b=self.point_b, point_c=self.point_c)
+        str_circle = f"{{\"type\": \"Circle\", \"x\": \"{circle.center.x}\", \"y\": \"{circle.center.y}\", " \
+                     f"\"r\": \"{circle.radius}\"}}"
         return f"{{\"number\": \"{self.number}\", \"point_a\": {self.point_a}, \"point_b\": {self.point_b}," \
-               f"\"point_c\": {self.point_c}, \"nears\": {nears}}}"
+               f"\"point_c\": {self.point_c}, \"nears\": {nears}, \"circle\": {str_circle}}}"
