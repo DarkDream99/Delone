@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c648044b-4b93-4d17-8a60-29e1e25f3c21" name="Default Changelist" comment="">
+    <list default="true" id="c648044b-4b93-4d17-8a60-29e1e25f3c21" name="Default Changelist" comment="fixed moment when triangle is divided on two by point">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delaunay/delaunay_lib/geometry/triangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/delaunay/delaunay_lib/geometry/triangle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,12 +51,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="py" value="192" />
-          <entry key="txt" value="48" />
+          <entry key="txt" value="106" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="PLAIN_TEXT" value="106" />
           <entry key="Python" value="192" />
         </counts>
       </usages-collector>
@@ -130,7 +128,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/geometry/triangle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
+            <state relative-caret-position="2567">
               <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -332,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548536498403</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed moment when triangle is divided on two by point">
+      <created>1548539264177</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548539264177</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -370,7 +375,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed formula for circle center" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed formula for circle center" />
+    <MESSAGE value="fixed moment when triangle is divided on two by point" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed moment when triangle is divided on two by point" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
@@ -386,6 +392,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -435,6 +444,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -546,7 +558,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/geometry/triangle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
+        <state relative-caret-position="2567">
           <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
