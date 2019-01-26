@@ -296,10 +296,11 @@ class Triangulator(object):
         # ind_k = self._point_index(point_k)
 
         circle = Circle(point_a=point_i, point_b=point_j, point_c=point_l)
-        if triangle.vertex_with_max_angle() == point_l:
-            return point_k not in circle
-        else:
-            return True
+        return point_k not in circle
+        # if triangle.vertex_with_max_angle() == point_l:
+        #     return point_k not in circle
+        # else:
+        #     return True
 
         # if ind_i >= 0 and ind_j >= 0 and ind_k >= 0 and ind_l >= 0:
         #     circle = Circle(point_a=point_i, point_b=point_j, point_c=point_l)

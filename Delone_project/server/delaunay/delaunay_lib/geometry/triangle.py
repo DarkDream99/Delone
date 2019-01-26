@@ -154,7 +154,7 @@ class Triangle(object):
             Triangle.join(triangle_b, triangle_d)
             Triangle.join(triangle_c, triangle_d)
 
-            for near_triangle in self.near_triangles:
+            for nnear_triangle in near_triangle.near_triangles:
                 Triangle.join(triangle_c, near_triangle)
                 Triangle.join(triangle_d, near_triangle)
             res_triangles += [triangle_b, triangle_d]
