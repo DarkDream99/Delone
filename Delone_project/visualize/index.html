@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Delaunay</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="styles/row_block.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <script type="text/javascript" src="scripts/file_reader.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row row_block">
+                <div class="col-sm">
+                     <svg id="view_map" width="95%" height="300px"></svg>
+                </div>
+
+                <div class"col-sm">
+                    <div>
+                        <input type="number" id="count_points" value="5" min="3" max="100">Количество точек</input>
+                    </div>
+
+                    <div>
+                        <button onclick="generatePoints()">Генерация точек</button>
+                        <button onclick="clearPoints()">Очистить точки</button>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="auto" name="movement">Автоматически</input>
+                        <input type="radio" id="step" name="movement" checked>Пошагово</input>
+                    </div>
+
+                    <div>
+                        <button id="prev_step" onclick="prevStep()">Назад</button>
+                        <button id="next_step" onclick="nextStep()">Далее</button>
+                    </div>
+
+                    <!-- <div>
+                        <button onclick="moveMapToCenter()">В центр</button>
+                    </div> -->
+
+                    <hr />
+                    <div>
+                        <input type="file" id="fileInput" accept=".delon" onchange="processFiles(this.files)">
+                    </div>
+
+                    <hr />
+                    <div>
+                        <button onclick="loadTriangulation()">Загрузить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row_block">
+                <div class="col-sm-7">
+                     <svg id="view_localize_tree" width="95%" height="300px"></svg>
+                </div>
+
+                <div class="col-sm-5">
+                    <div width="800px">
+                        <div>Шаг</div>
+                        <div>
+                            <p id="hint"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="scripts/base_info.js"></script>
+        <script src="scripts/eventer.js"></script>
+        <script src="scripts/event_controller.js"></script>
+        <script src="scripts/points_controller.js"></script>
+        <script src="scripts/points_generator.js"></script>
+        <script src="scripts/triangle_loader.js"></script>
+
+        <script src="scripts/geom/point.js"></script>
+        <script src="scripts/geom/segment.js"></script>
+        <script src="scripts/geom/triangle.js"></script>        
+
+        <script src="scripts/localizer/localize_node.js"></script>   
+        <script src="scripts/localizer/localize_tree.js"></script>             
+        <script src="scripts/localizer/localize_tree_controller.js"></script>
+    </body>
+</html>
