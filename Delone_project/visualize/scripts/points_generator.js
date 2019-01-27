@@ -4,6 +4,15 @@ function generatePoints() {
 	let toY = bounds[1];
 	let countPoints = $("#count_points").val();
 
+	if (countPoints <= 0) {
+		alert("Количество точек должно быть натуральным числом");
+		return;
+	}
+	if (countPoints > 100) {
+		alert("Допускается до 100 точек");
+		return;
+	}
+
 	for (let i = 0; i < countPoints; ++i) {
 		generatePoint(0, toX, 0, toY);
 	}

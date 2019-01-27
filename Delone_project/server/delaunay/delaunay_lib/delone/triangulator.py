@@ -80,7 +80,7 @@ class Triangulator(object):
         return json.dumps(self._events, default=serialize)
 
     def _init_base_triangle(self):
-        DELTA = 100
+        DELTA = 30
 
         left_bound = self._points[0].x - DELTA
         right_bound = self._points[0].x + DELTA
@@ -97,7 +97,7 @@ class Triangulator(object):
                 top_bound = point.y + DELTA
                 higher_point = point
             if point.y <= down_bound:
-                down_bound = point.y - 30
+                down_bound = point.y - DELTA
 
         self._higher_point = higher_point
         self._events.append(Event(ev_type=event.SELECT_BASE_POINT, data=higher_point))

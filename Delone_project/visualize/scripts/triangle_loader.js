@@ -1,5 +1,9 @@
 function loadTriangulation() {
 	points = getPoints();
+	if (points.length < 3) {
+		alert("Невозможно разбить на триугольники множество из менее 3 элементов")
+		return;
+	}
 	$("#prev_step").hide();
 	$("#next_step").hide();
 
