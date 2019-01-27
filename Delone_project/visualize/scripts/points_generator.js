@@ -17,9 +17,24 @@ function generatePoint(fromX, toX, fromY, toY) {
 	addVerticesListener();
 }
 
+function converToTest() {
+	let points = $("circle");
+	test = ""
+	for (let ind = 0; ind < points.length; ++ind) {
+		let point = $(points[ind]);
+		if (point.attr("type") == "sourcePoint") {
+			test += `${point.attr("cx")} ${point.attr("cy")} \n`;
+		}
+	}
+
+	console.log(test);
+}
+
 function clearPoints() {
 	d3.selectAll("circle").remove();
 	d3.selectAll("line").remove();
 	eventController.clear();
 	localizeTree.clear();
+
+	start();
 }

@@ -29,6 +29,8 @@ let localizeTree = {
 					new Point(nodes[ind].triangle.point_b.x, nodes[ind].triangle.point_b.y), 
 					new Point(nodes[ind].triangle.point_c.x, nodes[ind].triangle.point_c.y)
 			);
+			let center = new Point(nodes[ind].triangle.circle.x, nodes[ind].triangle.circle.y);
+			triangle.addCircle(center, nodes[ind].triangle.circle.r);
 			for (let i = 0; i < nodes[ind].triangle.nears.length; ++i) {
 				let near = nodes[ind].triangle.nears[i];
 				triangle.addNear(

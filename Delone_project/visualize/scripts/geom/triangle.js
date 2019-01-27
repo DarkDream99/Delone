@@ -3,11 +3,19 @@ function Triangle(pointA, pointB, pointC) {
 	this.pointB = pointB;
 	this.pointC = pointC;
 
-	this.nears = []
+	this.nears = [];
+	this.circle = null;
 
 	this.addNear = function(pointA, pointB, pointC) {
 		this.nears.push(new Triangle(pointA, pointB, pointC));
-	}
+	};
+
+	this.addCircle = function(center, radius) {
+		this.circle = {
+			center: center,
+			radius: radius
+		};
+	};
 
 	this.segments = function() {
 		return [

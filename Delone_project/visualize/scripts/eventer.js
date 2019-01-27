@@ -105,19 +105,32 @@ function deleteSegment(pointA, pointB) {
 }
 
 function nextStep() {
-	console.log($("#auto").prop("checked"));
+	let pause = $("#pause").val();
+
+	if (eventController.isEnd()) {
+		alert("Алгоритм окончил выполнение");
+		return;
+	}
+
 	if ($("#auto").prop("checked") == true) {
 		eventController.nextStep();
-		setTimeout(nextStep, 600);
+		setTimeout(nextStep, pause);
 	} else {
 		eventController.nextStep();
 	}
 }
 
 function prevStep() {
+	let pause = $("#pause").val();
+
+	if (eventController.isStart()) {
+		alert("Находимся на старте");
+		return;
+	}
+
 	if ($("#auto").prop("checked") == true) {
 		eventController.prevStep();
-		setTimeout(prevStep, 600);
+		setTimeout(prevStep, pause);
 	} else {
 		eventController.prevStep();
 	}

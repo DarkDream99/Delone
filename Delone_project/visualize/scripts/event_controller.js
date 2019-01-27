@@ -52,6 +52,14 @@ eventController = {
 		}
 	},
 
+	isEnd: function() {
+		return this._index == this._events.length;
+	},
+
+	isStart: function() {
+		return this._index == 0;
+	},
+
 	_applyEvent: function(event) {
 		if (event.type == EVENTS.selectBasePoint) {
 			selectBasePoint(event.data.x, event.data.y);

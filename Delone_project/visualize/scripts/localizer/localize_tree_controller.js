@@ -77,6 +77,10 @@ function _handleLocalizeNodeMouseOver(d, i) {
 	addSeenSegment(triangle.pointA, triangle.pointB);
 	addSeenSegment(triangle.pointB, triangle.pointC);
 	addSeenSegment(triangle.pointC, triangle.pointA);
+
+	if (triangle.circle) {
+		_addTriangleCircle(triangle.circle.center, triangle.circle.radius);
+	}
 }
 
 function _handleLocalizeNodeMouseOut(d, i) {
@@ -87,6 +91,9 @@ function _handleLocalizeNodeMouseOut(d, i) {
 	deleteSeenSegment(triangle.pointC, triangle.pointA);
 
 	_deselectNearTriangle(triangle);
+	if (triangle.circle) {
+		_deleteTriangleCircle(triangle.circle.center, triangle.circle.radius);
+	}
 }
 
 function _selectNearTriangle(triangle) {
@@ -107,6 +114,30 @@ function _selectNearSegment(nodePointA, nodePointB) {
 						.attr("type", "nearSegment")
 						.style("stroke", nearColor)
 						.style("stroke-width", seenWidth);
+}
+
+function _addTriangleCircle(center, radius) {
+	view_map_container.append("circle")
+            .attr("cx", center.coordX)
+            .attr("cy", center.coordY)
+            .attr("r", radius)
+            .attr("type", "outCircle")
+            .style("stroke", seenColor)
+            .style("fill", "none");
+}
+
+function _deleteTriangleCircle(center, radius) {
+	let circles = $("circle");
+	for (let ind = 0; ind < circles.length; ++ind) {
+		let circle = $(circles[ind]);
+		if (parseFloat(circle.attr("cx")) == center.coordX 
+			&& parseFloat(circle.attr("cy")) == center.coordY) 
+		{
+			if (circle.attr("type") == "outCircle") {
+				circle.remove();
+			}
+		}
+	}
 }
 
 function _deselectNearTriangle(triangle) {

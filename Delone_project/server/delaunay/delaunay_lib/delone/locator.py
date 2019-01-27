@@ -54,7 +54,8 @@ class LocationTree(object):
     def leaves(self):
         res = []
         for row in self._leaves:
-            res.append(row[0])
+            if len(row[1].children) == 0:
+                res.append(row[0])
         return res
 
     def point_location(self, point):
@@ -89,5 +90,5 @@ class LocationTree(object):
     def _find_leaf(self, triangle):
         for row in self._leaves:
             leaf_triangle = row[0]
-            if triangle == leaf_triangle: # and len(row[1].children) == 0:
+            if triangle == leaf_triangle and len(row[1].children) == 0:
                 return row[1]

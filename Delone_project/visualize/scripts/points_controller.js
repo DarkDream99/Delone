@@ -7,7 +7,10 @@ let transform = {x: 0, y: 0, k: 1};
 var margin = {top: -5, right: -5, bottom: -5, left: -5};
 
 
-$(document).ready(function() {
+$(document).ready(start); 
+
+function start() {
+    transform = {x: 0, y: 0, k: 1};
     d3.selectAll("svg")
         .transition()
         .style("background-color", "grey");
@@ -47,7 +50,7 @@ $(document).ready(function() {
                                 localize_tree_container.attr("transform", d3.event.transform);
                             }))
                             .append("g");
-}); 
+}
 
 let vertexCount = 0;
 function addNewPoint(coordX, coordY) {
@@ -56,7 +59,8 @@ function addNewPoint(coordX, coordY) {
             .attr("vertexIndex", vertexCount++)
             .attr("cx", coordX)
             .attr("cy", coordY)
-            .attr("r", generalPointRadius);
+            .attr("r", generalPointRadius)
+            .attr("type", "sourcePoint");
 }
 
 function addVerticesListener() {
