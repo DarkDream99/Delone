@@ -1,19 +1,11 @@
-function selectBasePoint(coordX, coordY) {
+function addBasePoint(coordX, coordY) {
 	let circles = $("circle"); 
-	let exist = false;
-	for (let ind = 0; ind < circles.length; ++ind) {
-		if ($(circles[ind]).attr("cx") == parseFloat(coordX) && $(circles[ind]).attr("cy") == parseFloat(coordY)) {
-			$(circles[ind])
-				.attr("r", selectedPointRadius)
-				.css("fill", baseColor);
-			exist = true;
-		}
-	}
-
-	if (!exist) {
-		addNewPoint(coordX, coordY);
-		selectBasePoint(coordX, coordY);
-	}
+	view_map_container.append("circle")
+            .attr("cx", coordX)
+            .attr("cy", coordY)
+            .attr("r", generalPointRadius)
+            .attr("type", "basePoint")
+            .style("fill", baseColor);
 }
 
 function selectPoint(coordX, coordY) {
@@ -42,6 +34,18 @@ function deletePoint(coordX, coordY) {
 	let circles = $("circle");
 	for (let ind = 0; ind < circles.length; ++ind) {
 		if ($(circles[ind]).attr("cx") == parseFloat(coordX) && $(circles[ind]).attr("cy") == parseFloat(coordY)) {
+			$(circles[ind]).remove();
+		}
+	}
+}
+
+function deleteBasePoint(coordX, coordY) {
+	let circles = $("circle");
+	for (let ind = 0; ind < circles.length; ++ind) {
+		if ($(circles[ind]).attr("cx") == parseFloat(coordX) 
+			&& $(circles[ind]).attr("cy") == parseFloat(coordY)
+			&& $(circles[ind]).attr("type") == "basePoint") 
+		{
 			$(circles[ind]).remove();
 		}
 	}

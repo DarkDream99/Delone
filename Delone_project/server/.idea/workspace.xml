@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c648044b-4b93-4d17-8a60-29e1e25f3c21" name="Default Changelist" comment="fixed moment when triangle is divided on two by point">
-      <change afterPath="$PROJECT_DIR$/delaunay/delaunay_lib/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delaunay/delaunay_lib/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../visualize/scripts/points_generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/../visualize/scripts/points_generator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../visualize/scripts/triangle_loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../visualize/scripts/triangle_loader.js" afterDir="false" />
-    </list>
+    <list default="true" id="c648044b-4b93-4d17-8a60-29e1e25f3c21" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,32 +51,45 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="518" />
-          <entry key="txt" value="112" />
+          <entry key="py" value="750" />
+          <entry key="txt" value="221" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="112" />
-          <entry key="Python" value="518" />
+          <entry key="PLAIN_TEXT" value="221" />
+          <entry key="Python" value="750" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="2" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="1" />
+          <entry key="Python" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="236" column="93" selection-start-line="236" selection-start-column="93" selection-end-line="236" selection-end-column="93" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1548583041368" expanded="true" signature="12708:13113" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/test.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -96,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/input.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+            <state relative-caret-position="-384">
+              <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -178,15 +184,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/server/Lib/site-packages/rest_framework/decorators.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -213,9 +210,9 @@
         <option value="$PROJECT_DIR$/delaunay/delaunay_lib/geometry/circle.py" />
         <option value="$PROJECT_DIR$/delaunay/delaunay_lib/geometry/triangle.py" />
         <option value="$PROJECT_DIR$/delaunay/delaunay_lib/delone/locator.py" />
-        <option value="$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py" />
         <option value="$PROJECT_DIR$/delaunay/delaunay_lib/test.py" />
         <option value="$PROJECT_DIR$/delaunay/delaunay_lib/input.txt" />
+        <option value="$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py" />
       </list>
     </option>
   </component>
@@ -225,7 +222,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="508" />
     <option name="width" value="865" />
     <option name="height" value="735" />
@@ -253,6 +250,13 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="delaunay" type="462c0819:PsiDirectoryNode" />
               <item name="delaunay_lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="delaunay" type="462c0819:PsiDirectoryNode" />
+              <item name="delaunay_lib" type="462c0819:PsiDirectoryNode" />
+              <item name="delone" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
@@ -374,12 +378,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548539264177</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed incorrect visualisation when point lays on the segment">
+      <created>1548583152014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548583152014</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26399395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -413,7 +423,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed formula for circle center" />
     <MESSAGE value="fixed moment when triangle is divided on two by point" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed moment when triangle is divided on two by point" />
+    <MESSAGE value="fixed incorrect visualisation when point lays on the segment" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed incorrect visualisation when point lays on the segment" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
@@ -593,18 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1548551456137" expanded="true" signature="11510:11915" ph="..." />
-            <marker date="1548551456137" expanded="true" signature="12661:12796" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -617,8 +616,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/input.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+        <state relative-caret-position="-384">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="236" column="93" selection-start-line="236" selection-start-column="93" selection-end-line="236" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1548583041368" expanded="true" signature="12708:13113" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

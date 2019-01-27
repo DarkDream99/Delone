@@ -62,7 +62,7 @@ eventController = {
 
 	_applyEvent: function(event) {
 		if (event.type == EVENTS.selectBasePoint) {
-			selectBasePoint(event.data.x, event.data.y);
+			addBasePoint(event.data.x, event.data.y);
 		}
 
 		if (event.type == EVENTS.selectPoint) {
@@ -125,7 +125,7 @@ eventController = {
 
 	_deapplyEvent: function(event) {
 		if (event.type == EVENTS.selectBasePoint) {
-			deletePoint(event.data.x, event.data.y);
+			deleteBasePoint(event.data.x, event.data.y);
 		}
 
 		if (event.type == EVENTS.selectPoint) {
