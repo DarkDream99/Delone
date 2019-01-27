@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c648044b-4b93-4d17-8a60-29e1e25f3c21" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../visualize/tests/bounds/1.delon" beforeDir="false" afterPath="$PROJECT_DIR$/../visualize/tests/bounds/1.delon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../visualize/tests/bounds/2.delon" beforeDir="false" afterPath="$PROJECT_DIR$/../visualize/tests/bounds/2.delon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../visualize/tests/bounds/3.delon" beforeDir="false" afterPath="$PROJECT_DIR$/../visualize/tests/bounds/3.delon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../visualize/tests/error/1.delon" beforeDir="false" afterPath="$PROJECT_DIR$/../visualize/tests/error/1.delon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../visualize/tests/incorect/1.delon" beforeDir="false" afterPath="$PROJECT_DIR$/../visualize/tests/incorect/1.delon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../visualize/tests/incorect/2.delon" beforeDir="false" />
-    </list>
+    <list default="true" id="c648044b-4b93-4d17-8a60-29e1e25f3c21" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,14 +51,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="801" />
+          <entry key="py" value="817" />
           <entry key="txt" value="221" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="221" />
-          <entry key="Python" value="801" />
+          <entry key="Python" value="817" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -88,11 +80,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="100" column="40" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+            <state relative-caret-position="87">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1548591200802" expanded="true" signature="12864:13269" ph="..." />
+                <marker date="1548591358915" expanded="true" signature="12861:13266" ph="..." />
               </folding>
             </state>
           </provider>
@@ -397,7 +389,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26399395" />
@@ -434,22 +426,6 @@
     <MESSAGE value="fixed moment when triangle is divided on two by point" />
     <MESSAGE value="fixed incorrect visualisation when point lays on the segment" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed incorrect visualisation when point lays on the segment" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
@@ -648,11 +624,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/delaunay/delaunay_lib/delone/triangulator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="100" column="40" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+        <state relative-caret-position="87">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1548591200802" expanded="true" signature="12864:13269" ph="..." />
+            <marker date="1548591358915" expanded="true" signature="12861:13266" ph="..." />
           </folding>
         </state>
       </provider>
