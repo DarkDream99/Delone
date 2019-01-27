@@ -122,8 +122,14 @@ class Triangulator(object):
                     if segment.contains_point(self._down_base_point) and segment not in used_segments:
                         self._events.append(Event(ev_type=event.DELETE_SEGMENT, data=segment))
                         used_segments.add(segment)
+                    if segment.contains_point(self._top_base_point) and segment not in used_segments:
+                        self._events.append(Event(ev_type=event.DELETE_SEGMENT, data=segment))
+                        used_segments.add(segment)
             if self._top_base_point in triangle.points:
                 for segment in triangle.segments:
+                    if segment.contains_point(self._down_base_point) and segment not in used_segments:
+                        self._events.append(Event(ev_type=event.DELETE_SEGMENT, data=segment))
+                        used_segments.add(segment)
                     if segment.contains_point(self._top_base_point) and segment not in used_segments:
                         self._events.append(Event(ev_type=event.DELETE_SEGMENT, data=segment))
                         used_segments.add(segment)
@@ -205,19 +211,31 @@ class Triangulator(object):
 
                 segment_a = Segment(base_triangle.point_a, base_triangle.point_b)
                 self._legalize_by_segment(changes[triangle], segment_a)
-                # next_changes.extend(temp_changes)
 
                 segment_b = Segment(base_triangle.point_b, base_triangle.point_c)
                 self._legalize_by_segment(changes[triangle], segment_b)
-                # next_changes.extend(temp_changes)
 
                 segment_c = Segment(base_triangle.point_c, base_triangle.point_a)
                 self._legalize_by_segment(changes[triangle], segment_c)
-                # next_changes.extend(temp_changes)
             # on segment
             else:
                 triangle_a, triangle_b = changes[triangle]
                 common_segment = triangle_a.get_common_segment(triangle_b)
+                if common_segment.start in triangle:
+                    point_in_triangle = common_segment.start
+                    split_point = common_segment.end
+                else:
+                    split_point = common_segment.end
+                    point_in_triangle = common_segment.end
+
+                splited_segment_points = triangle.last_points([point_in_triangle])
+                splited_segment = Segment(splited_segment_points[0], splited_segment_points[1])
+                self._events.append(Event(ev_type=event.DELETE_SEGMENT, data=splited_segment))
+                self._events.append(Event(ev_type=event.ADD_SEGMENT,
+                                          data=Segment(split_point, splited_segment_points[0])))
+                self._events.append(Event(ev_type=event.ADD_SEGMENT,
+                                          data=Segment(split_point, splited_segment_points[1])))
+
                 self._events.append(Event(ev_type=event.ADD_SEGMENT, data=common_segment))
                 point_i = triangle_a.last_points([common_segment.start, common_segment.end])[0]
                 point_j = triangle_b.last_points([common_segment.start, common_segment.end])[0]
@@ -231,7 +249,6 @@ class Triangulator(object):
                 self._legalize_segment(triangle_a, segment_a)
                 segment_b = Segment(point_j, start_point)
                 self._legalize_segment(triangle_b, segment_b)
-                # next_changes.extend(temp_changes)
 
             next_changes.clear()
             used_triangles.append(triangle)
@@ -290,23 +307,8 @@ class Triangulator(object):
             return True
         point_k = near_triangle.last_points([point_i, point_j])[0]
 
-        # ind_i = self._point_index(point_i)
-        # ind_j = self._point_index(point_j)
-        # ind_l = self._point_index(point_l)
-        # ind_k = self._point_index(point_k)
-
         circle = Circle(point_a=point_i, point_b=point_j, point_c=point_l)
         return point_k not in circle
-        # if triangle.vertex_with_max_angle() == point_l:
-        #     return point_k not in circle
-        # else:
-        #     return True
-
-        # if ind_i >= 0 and ind_j >= 0 and ind_k >= 0 and ind_l >= 0:
-        #     circle = Circle(point_a=point_i, point_b=point_j, point_c=point_l)
-        #     return point_k in circle
-
-        # return min(ind_l, ind_k) > min(ind_i, ind_j)
 
     def _point_index(self, point):
         if point == self._down_base_point:
