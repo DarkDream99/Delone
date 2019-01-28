@@ -82,6 +82,19 @@ class Triangle(object):
             res_triangles.append(self.get_near_triangle_by_segment(segment))
         return res_triangles
 
+    @property
+    def middle_point(self):
+        res_point = Point(
+            (self.point_a.x + self.point_b.x) / 2,
+            (self.point_a.y + self.point_b.y) / 2
+        )
+        res_point = Point(
+            (self.point_c.x + res_point.x) / 2,
+            (self.point_c.y + res_point.y) / 2
+        )
+
+        return res_point
+
     def last_points(self, used_points):
         res = []
         if self.point_a not in used_points:

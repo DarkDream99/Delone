@@ -18,13 +18,18 @@ class Circle (object):
 
     def _init_by_points(self, a, b, c):
         d = 2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
-        ux = ((a.x ** 2 + a.y ** 2)*(b.y - c.y) + (b.x ** 2 + b.y ** 2)*(c.y - a.y)
-              + (c.x ** 2 + c.y ** 2)*(a.y - b.y)) / d
-        uy = ((a.x ** 2 + a.y ** 2)*(c.x - b.x) + (b.x ** 2 + b.y ** 2)*(a.x - c.x)
-              + (c.x ** 2 + c.y ** 2)*(b.x - a.x)) / d
+        if d == 0:
+            ux, uy = 0, 0
+            self.radius = 0
+            self.center = Point(ux, uy)
+        else:
+            ux = ((a.x ** 2 + a.y ** 2)*(b.y - c.y) + (b.x ** 2 + b.y ** 2)*(c.y - a.y)
+                  + (c.x ** 2 + c.y ** 2)*(a.y - b.y)) / d
+            uy = ((a.x ** 2 + a.y ** 2)*(c.x - b.x) + (b.x ** 2 + b.y ** 2)*(a.x - c.x)
+                  + (c.x ** 2 + c.y ** 2)*(b.x - a.x)) / d
 
-        self.center = Point(ux, uy)
-        self.radius = Segment(self.center, a).length
+            self.center = Point(ux, uy)
+            self.radius = Segment(self.center, a).length
 
         points = [a, b, c]
         sorted_points = sort_point(points, ccw_comparator)

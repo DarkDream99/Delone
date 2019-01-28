@@ -92,3 +92,15 @@ class LocationTree(object):
             leaf_triangle = row[0]
             if triangle == leaf_triangle and len(row[1].children) == 0:
                 return row[1]
+
+    def _find_node_by_triangle(self, triangle):
+        middle_point = triangle.middle_point
+        start_node = self._root
+
+        while not start_node.is_leaf():
+            for child in start_node.children:
+                if middle_point in child:
+                    start_node = child
+                    break
+        return start_node
+
