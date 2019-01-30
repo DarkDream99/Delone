@@ -20,7 +20,7 @@
 
         <script src="https://d3js.org/d3.v5.min.js"></script>
 
-        <script type="text/javascript" src="scripts/file_reader.js"></script>
+        <script src="scripts/file_reader.js"></script>
     </head>
 
     <body>
@@ -46,7 +46,6 @@
                         <div>
                             <span>Пауза: <span>
                             <input type="range" id="pause" name="movement" min="1" max="2000" step="100"> 
-
                         </div>
                     </div>
 
@@ -55,13 +54,12 @@
                         <button id="next_step" onclick="nextStep()">Далее</button>
                     </div>
 
-                    <!-- <div>
-                        <button onclick="moveMapToCenter()">В центр</button>
-                    </div> -->
-
                     <hr />
                     <div>
-                        <input type="file" id="fileInput" accept=".delon" onchange="processFiles(this.files)">
+                        <button onclick="showFileAddition()">Добавить тест</button>
+                        <input type="file" id="fileInput" accept=".delon" style="display: none" onchange="processFileAddition(this.files)">
+                        <button onclick="document.getElementById('fileLoad').click();">Новый тест</button>
+                        <input type="file" id="fileLoad" accept=".delon" style="display: none" onchange="processFileLoad(this.files)">
                     </div>
 
                     <hr />

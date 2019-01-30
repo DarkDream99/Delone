@@ -8,12 +8,22 @@ from delaunay.delaunay_lib.geometry.point import Point
 from delaunay.delaunay_lib.delone.triangulator import Triangulator
 
 
-f = urlopen('https://stepic.org/media/attachments/lesson/16462/boston_houses.csv')
-data_table = np.loadtxt(f, skiprows=1, delimiter=',')
-means = data_table.mean(axis=0)
-print(means)
+fname = "https://stepic.org/media/attachments/lesson/16462/boston_houses.csv"  # read file name from stdin
+f = urlopen(fname)  # open file from URL
+data = np.loadtxt(f, delimiter=',', skiprows=1)  # load data to work with
 
-print(data_table)
+matrix_x = np.ones_like(data)
+matrix_x[:, 1:] = np.copy(data)[:, 1:]
+
+matrix_y = np.copy(data)[:, :1]
+res_coeff = np.linalg.inv(matrix_x.T @ matrix_x) @ matrix_x.T @ matrix_y
+print(" ".join(str(x[0]) for x in res_coeff))
+
+print(data)
+print()
+print(matrix_x)
+print()
+print(res_coeff)
 
 
 # points = []
