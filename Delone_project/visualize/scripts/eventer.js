@@ -117,35 +117,30 @@ function deleteSegment(pointA, pointB) {
 let nextClickCount = 0;
 function nextStep() {
 	let pause = $("#pause").val();
-	prevClickCount = 0;
 
 	if (eventController.isEnd()) {
 		alert("Алгоритм окончил выполнение");
 		return;
 	}
 
-	if ($("#auto").prop("checked") == true && nextClickCount == 0) {
+	if ($("#auto").prop("checked") == true) {
 		eventController.nextStep();
-		nextClickCount += 1;
 		setTimeout(nextStep, pause);
 	} else {
 		eventController.nextStep();
 	}
 }
 
-let prevClickCount = 0;
 function prevStep() {
 	let pause = $("#pause").val();
-	nextClickCount = 0;
 
 	if (eventController.isStart()) {
 		alert("Находимся на старте");
 		return;
 	}
 
-	if ($("#auto").prop("checked") == true && prevClickCount == 0) {
+	if ($("#auto").prop("checked") == true) {
 		eventController.prevStep();
-		prevClickCount += 1;
 		setTimeout(prevStep, pause);
 	} else {
 		eventController.prevStep();
