@@ -4,7 +4,7 @@ let baseColor = "red";
 let generalColor = "black";
 let newColor = "orange";
 let selectColor = "green";
-let seenColor = "yellow";
+let seenColor = "brown";
 let nearColor = "blue";
 
 let generalPointRadius = 5;

@@ -12,8 +12,7 @@ $(document).ready(start);
 function start() {
     transform = {x: 0, y: 0, k: 1};
     d3.selectAll("svg")
-        .transition()
-        .style("background-color", "grey");
+        .transition();
 
     view_map_container = d3.select("#view_map");
     localize_tree_container = d3.select("#view_localize_tree");
