@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Delaunay</title>
 
         <!-- Latest compiled and minified CSS -->
@@ -25,53 +26,60 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container" height="1000px">
             <div class="row row_block">
                 <div class="col-sm view_block">
                      <svg id="view_map" width="95%" height="300px"></svg>
                 </div>
 
                 <div class"col-sm">
-                    <div>
+                    <div class="row_block">
                         <input type="number" id="count_points" value="5" min="3" max="100">Количество точек</input>
                     </div>
 
-                    <div>
-                        <button onclick="generatePoints()">Генерация точек</button>
-                        <button onclick="clearPoints()">Очистить точки</button>
+                    <div class="row_block">
+                        <button class="btn btn-outline-secondary" onclick="generatePoints()">Генерация точек</button>
+                        <button class="btn btn-outline-secondary" onclick="clearPoints()">Очистить точки</button>
                     </div>
 
-                    <div>
-                        <input type="radio" id="auto" name="movement">Автоматически</input>
-                        <input type="radio" id="step" name="movement" checked>Пошагово</input>
-                        <div>
-                            <span>Пауза: <span>
-                            <input type="range" id="pause" name="movement" min="1" max="2000" step="100"> 
+                    <div class="row_block">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="auto" class="form-check-input" name="movement">
+                            <label class="form-check-lable" for="auto">Автоматически</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="step" class="form-check-input" name="movement" checked>
+                            <lable class="form-check-lable" for="step">Пошагово</lable>
+                        </div>
+
+                        <div class="form-group">
+                            <lable for="pause">Пауза: </lable>
+                            <input type="range" id="pause" class="form-control-range" name="movement" min="1" max="2000" step="100"> 
                         </div>
                     </div>
 
                     <div>
-                        <button id="prev_step" onclick="prevStep()">Назад</button>
-                        <button id="next_step" onclick="nextStep()">Далее</button>
+                        <button class="btn btn-outline-secondary" id="prev_step" onclick="prevStep()">Назад</button>
+                        <button class="btn btn-outline-secondary" id="next_step" onclick="nextStep()">Далее</button>
                     </div>
 
                     <hr />
                     <div>
-                        <button onclick="showFileAddition()">Добавить тест</button>
+                        <button class="btn btn-outline-secondary" onclick="showFileAddition()">Добавить тест</button>
                         <input type="file" id="fileInput" accept=".delon" style="display: none" onchange="processFileAddition(this.files)">
-                        <button onclick="document.getElementById('fileLoad').click();">Новый тест</button>
+                        <button class="btn btn-outline-secondary" onclick="document.getElementById('fileLoad').click();">Новый тест</button>
                         <input type="file" id="fileLoad" accept=".delon" style="display: none" onchange="processFileLoad(this.files)">
                     </div>
 
                     <hr />
                     <div>
-                        <button onclick="loadTriangulation()">Загрузить на сервер</button>
-                        <button onclick="converToTest()">Преобразовать в тест</button>
+                        <button class="btn btn-outline-secondary" onclick="loadTriangulation()">Загрузить на сервер</button>
+                        <button class="btn btn-outline-secondary" onclick="converToTest()">Преобразовать в тест</button>
                     </div>
                 </div>
             </div>
 
-            <div class="row row_block">
+            <div class="row row_block" height="300px">
                 <div class="col-sm-7 view_block">
                      <svg id="view_localize_tree" width="95%" height="300px"></svg>
                 </div>
