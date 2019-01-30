@@ -12,6 +12,7 @@ function processFileAddition(files) {
 	};
 
 	reader.readAsText(file);
+	$("#fileInput").val("");
 }
 
 function processFileLoad(files) {
@@ -30,6 +31,7 @@ function processFileLoad(files) {
 	};
 
 	reader.readAsText(file);
+	$("#fileLoad").val("");
 }
 
 function readPoints(rows) {

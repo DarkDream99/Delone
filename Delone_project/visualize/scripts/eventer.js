@@ -74,8 +74,10 @@ function addSegment(pointA, pointB) {
 function selectSegment(pointA, pointB) {
 	let segments = $("line");
 	for (let ind = 0; ind < segments.length; ++ind) {
-		if (parseFloat($(segments[ind]).attr("x1")) == parseFloat(pointA.x) && parseFloat($(segments[ind]).attr("y1")) == parseFloat(pointA.y) &&
-			parseFloat($(segments[ind]).attr("x2")) == parseFloat(pointB.x) && parseFloat($(segments[ind]).attr("y2")) == parseFloat(pointB.y))
+		if (parseFloat($(segments[ind]).attr("x1")) == parseFloat(pointA.x) 
+			&& parseFloat($(segments[ind]).attr("y1")) == parseFloat(pointA.y)
+			&& parseFloat($(segments[ind]).attr("x2")) == parseFloat(pointB.x) 
+			&& parseFloat($(segments[ind]).attr("y2")) == parseFloat(pointB.y))
 		{
 			$(segments[ind])
 				.css("stroke", selectColor)
@@ -87,8 +89,10 @@ function selectSegment(pointA, pointB) {
 function deselectSegment(pointA, pointB) {
 	let segments = $("line");
 	for (let ind = 0; ind < segments.length; ++ind) {
-		if (parseFloat($(segments[ind]).attr("x1")) == parseFloat(pointA.x) && parseFloat($(segments[ind]).attr("y1")) == parseFloat(pointA.y) &&
-			parseFloat($(segments[ind]).attr("x2")) == parseFloat(pointB.x) && parseFloat($(segments[ind]).attr("y2")) == parseFloat(pointB.y))
+		if (parseFloat($(segments[ind]).attr("x1")) == parseFloat(pointA.x) 
+			&& parseFloat($(segments[ind]).attr("y1")) == parseFloat(pointA.y) 
+			&& parseFloat($(segments[ind]).attr("x2")) == parseFloat(pointB.x) 
+			&& parseFloat($(segments[ind]).attr("y2")) == parseFloat(pointB.y))
 		{
 			$(segments[ind])
 				.css("stroke", generalColor)
@@ -100,44 +104,50 @@ function deselectSegment(pointA, pointB) {
 function deleteSegment(pointA, pointB) {
 	let segments = $("line");
 	for (let ind = 0; ind < segments.length; ++ind) {
-		if (parseFloat($(segments[ind]).attr("x1")) == parseFloat(pointA.x) && parseFloat($(segments[ind]).attr("y1")) == parseFloat(pointA.y) &&
-			parseFloat($(segments[ind]).attr("x2")) == parseFloat(pointB.x) && parseFloat($(segments[ind]).attr("y2")) == parseFloat(pointB.y))
+		if (parseFloat($(segments[ind]).attr("x1")) == parseFloat(pointA.x) 
+			&& parseFloat($(segments[ind]).attr("y1")) == parseFloat(pointA.y) 
+			&& parseFloat($(segments[ind]).attr("x2")) == parseFloat(pointB.x) 
+			&& parseFloat($(segments[ind]).attr("y2")) == parseFloat(pointB.y))
 		{
 			$(segments[ind]).remove();
 		}
 	}
 }
 
+let nextClickCount = 0;
 function nextStep() {
 	let pause = $("#pause").val();
+	prevClickCount = 0;
 
 	if (eventController.isEnd()) {
 		alert("Алгоритм окончил выполнение");
 		return;
 	}
 
-	if ($("#auto").prop("checked") == true) {
+	if ($("#auto").prop("checked") == true && nextClickCount == 0) {
 		eventController.nextStep();
+		nextClickCount += 1;
 		setTimeout(nextStep, pause);
 	} else {
 		eventController.nextStep();
 	}
 }
 
+let prevClickCount = 0;
 function prevStep() {
 	let pause = $("#pause").val();
+	nextClickCount = 0;
 
 	if (eventController.isStart()) {
 		alert("Находимся на старте");
 		return;
 	}
 
-	if ($("#auto").prop("checked") == true) {
+	if ($("#auto").prop("checked") == true && prevClickCount == 0) {
 		eventController.prevStep();
+		prevClickCount += 1;
 		setTimeout(prevStep, pause);
 	} else {
 		eventController.prevStep();
 	}
 }
-
-
