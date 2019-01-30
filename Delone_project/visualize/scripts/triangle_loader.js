@@ -4,6 +4,11 @@ function loadTriangulation() {
 		alert("Невозможно разбить на триугольники множество из менее 3 элементов")
 		return;
 	}
+	if (points.length > 100) {
+		alert(`Попытка загрузить ${points.length} точек из 100 возможных`);
+		return;
+	}
+
 	$("#prev_step").hide();
 	$("#next_step").hide();
 
