@@ -114,7 +114,6 @@ function deleteSegment(pointA, pointB) {
 	}
 }
 
-let nextClickCount = 0;
 function nextStep() {
 	let pause = $("#pause").val();
 

@@ -1,4 +1,4 @@
-function generatePoints() {
+function generatePoints() {	
 	let bounds = boundaryElement("view_map");
 	let toX = bounds[0];
 	let toY = bounds[1];
@@ -11,6 +11,15 @@ function generatePoints() {
 	if (countPoints > 100) {
 		alert("Допускается до 100 точек");
 		return;
+	}
+
+	if (!eventController.isStart() && !eventController.isEnd()) {
+	let ok = confirm("Вы уверены что хотите создать новые точки? Текущее состояние триангуляции будет утеряно.");
+		if (ok) {
+			clearPoints();
+		} else {
+			return;
+		}
 	}
 
 	for (let i = 0; i < countPoints; ++i) {
